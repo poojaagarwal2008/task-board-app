@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  taskservice:
+    build:
+      context: .
+      dockerfile: TaskService/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  fileservice:
+    build:
+      context: .
+      dockerfile: FileService/Dockerfile
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
